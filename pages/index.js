@@ -3,13 +3,14 @@ import Header from '@/components/Header';
 import Featured from '@/components/Featured';
 import { Product } from '@/models/Product';
 import { mongooseConnect } from '@/lib/mongoose';
+import NewProducts from '@/components/Products/NewProducts';
 
 export default function Home({ featuredProduct, newProducts }) {
-  console.log(newProducts);
   return (
     <div>
       <Header />
       <Featured product={featuredProduct} />
+      <NewProducts products={newProducts} />
     </div>
   );
 }

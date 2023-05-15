@@ -21,6 +21,7 @@
     "next": "13.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.62.1",
     "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {
@@ -36,6 +37,13 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.4.23",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.21.0"
   }
 }
