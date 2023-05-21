@@ -54,9 +54,15 @@ const Price = styled.div`
   margin-bottom: 10px;
 `;
 
-export default function ProductBox({ _id, title, description, price, images }) {
+export default function FeaturedProductBox({
+  _id,
+  title,
+  description,
+  price,
+  images,
+}) {
   const { addProductToCart } = useContext(CartContext);
-  const url = `/products/${_id}`;
+  const url = `/featured/${_id}`;
   return (
     <ProductWrapper>
       <WhiteBox href={url}>
@@ -64,6 +70,7 @@ export default function ProductBox({ _id, title, description, price, images }) {
       </WhiteBox>
       <ProductInfoBox>
         <Title href={url}>{title}</Title>
+        <p>{description}</p>
         <PriceRow>
           <Price>${price}</Price>
           <Button

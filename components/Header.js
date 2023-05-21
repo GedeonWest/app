@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Center from './Center';
+import { CartContext } from '@/context/CartContext';
 
 const StyledHeader = styled.header`
   background-color: #222;
@@ -64,17 +65,16 @@ const NavButton = styled.button`
 `;
 
 export default function Header() {
+  const { cartProducts } = useContext(CartContext);
   return (
     <StyledHeader>
-      <Link href="/">Ecommerce</Link>
       <Center>
         <Wrapper>
           <StyledNav>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/products">All Products</NavLink>
-            <NavLink href="/categories">Categories</NavLink>
-            <NavLink href="/account">Account</NavLink>
-            <NavLink href="/cart">Cart</NavLink>
+            <NavLink href="/">Home (SSR)</NavLink>
+            <NavLink href="/products">All Products (SSR)</NavLink>
+            <NavLink href="/featured">Featured products (SSG)</NavLink>
+            <NavLink href="/cart">Cart ({cartProducts.length})</NavLink>
           </StyledNav>
         </Wrapper>
       </Center>

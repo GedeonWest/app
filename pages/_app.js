@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import CartContextProvider from '@/context/CartContext';
+import { CartContextProvider } from '@/context/CartContext';
+import Head from 'next/head';
 // import { CartContextProvider } from '@/components/CartContext';
 
 const GlobalStyles = createGlobalStyle`
@@ -15,6 +16,9 @@ const GlobalStyles = createGlobalStyle`
 export default function App({ Component, pageProps }) {
   return (
     <>
+    <Head>
+      <title>Проект по Next js</title>
+    </Head>
       <GlobalStyles />
       <CartContextProvider>
         <Component {...pageProps} />

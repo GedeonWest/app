@@ -5,9 +5,8 @@ import Button from '@/components/Buttons/Button';
 import ButtonLink from '@/components/Buttons/ButtonLink';
 import CartIcon from './Icons/CartIcon';
 import { CartContext } from '@/context/CartContext';
-// import CartIcon from '@/components/icons/CartIcon';
-// import {useContext} from "react";
-// import {CartContext} from "@/components/CartContext";
+import NextImage from '@/public/nextjs.png'
+import Image from 'next/image';
 
 const Bg = styled.div`
   background-color: #222;
@@ -60,9 +59,9 @@ const ButtonsWrapper = styled.div`
 `;
 
 export default function Featured({ product }) {
-  const { addProduct } = useContext(CartContext);
+  const { addProductToCart } = useContext(CartContext);
   function addFeaturedToCart() {
-    addProduct(product._id);
+    addProductToCart(product._id);
   }
   return (
     <Bg>
@@ -93,9 +92,11 @@ export default function Featured({ product }) {
             </div>
           </Column>
           <Column>
-            <img
-              src="https://w7.pngwing.com/pngs/940/1018/png-transparent-billy-herrington.png"
-              alt=""
+            <Image
+              src={NextImage}
+              alt="Next"
+              width={200}
+              height={200}
             />
           </Column>
         </ColumnsWrapper>
